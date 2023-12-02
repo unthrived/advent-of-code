@@ -15,14 +15,11 @@ def solve(part = 1):
         print()
         print(i)
         count = 1
-        RBG_fewest = [300, 300, 300]
         RBG_max = [0, 0, 0]
         cubes = data[i].split('; ')
         for j in range(len(cubes)):
             cube = cubes[j].split(', ')
             RBG = [cubes[j].find(' red'), cubes[j].find(' blue'), cubes[j].find(' green')]
-            RBG_sorted = sorted(RBG)
-            RBG_values = [None]*3
             RBG_final = [None]*3
             for k in range(len(cube)):
                 cube[k] = cube[k].replace(' red', '')
