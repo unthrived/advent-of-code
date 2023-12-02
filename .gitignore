@@ -3,3 +3,4 @@ cookie.txt
 /examples
 # Cries in Macintosh
 .DS_Store
+.gitattributes
