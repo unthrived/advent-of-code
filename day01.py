@@ -78,8 +78,5 @@ def part_two(data):
 
 #print(data)
 data = part_two(data)
-
-# print('\n\n\n\n')
-# print(data)
 result = part_one(data)
 print(result)
