@@ -49,7 +49,7 @@ def solve(part = 1):
                 if RBG_final[0] > 12 or RBG_final[1] > 14 or RBG_final[2] > 13:
                     count = 0
                     break
-                
+
             # part two 
             print(RBG_final)
             for z in range(3):
