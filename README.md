@@ -7,7 +7,7 @@
 | --- | ------ |
 | [Day 1](https://github.com/unthrived/advent-of-code-2023/blob/main/src/day01.py) | :star: :star: |
 | [Day 2](https://github.com/unthrived/advent-of-code-2023/blob/main/src/day02.py) | :star: :star: |
-| [Day 3](https://github.com/unthrived/advent-of-code-2023/blob/main/src/day03.py) | :soon: :soon: |
+| [Day 3](https://github.com/unthrived/advent-of-code-2023/blob/main/src/day03.py) | :star: :star: |
 | [Day 4](https://github.com/unthrived/advent-of-code-2023/blob/main/src/day04.py) | :soon: :soon: |
 | [Day 5](https://github.com/unthrived/advent-of-code-2023/blob/main/src/day05.py) | :soon: :soon: |
 | [Day 6](https://github.com/unthrived/advent-of-code-2023/blob/main/src/day06.py) | :soon: :soon: |
