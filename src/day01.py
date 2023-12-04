@@ -1,9 +1,5 @@
-path = 'input/day01.txt'
-#path = 'examples/day01.txt'
-
-with open(path, 'r') as f:
-    data = f.readlines()
-
+from utils import read_input
+data = read_input(day=1)
 
 def part_one(data):
     ans = 0

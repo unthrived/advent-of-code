@@ -4,3 +4,4 @@ cookie.txt
 # Cries in Macintosh
 .DS_Store
 .gitattributes
+/src/__pycache__

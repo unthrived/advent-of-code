@@ -1,9 +1,5 @@
-path = 'input/day04.txt'
-
-with open(path, 'r') as f:
-    data = f.readlines()
-    data = list(map(str.strip, data))
-
+from utils import read_input
+data = read_input(day=4)
 
 n = len(data)
 total_points = 0
@@ -32,7 +28,3 @@ print(total_points)
 for i in range(n):
     total_cards += amount_cards[i]
 print(total_cards)
-    
-        
-            
-

@@ -1,13 +1,5 @@
-path = 'input/day03.txt'
-
-with open(path, 'r') as f:
-    data = f.readlines()
-    data = list(map(str.strip, data))
-
-def digits(n): 
-    return len(str(n))
-
-print(digits(1023))
+from utils import read_input
+data = read_input(day=3)
 
 n, m = len(data), len(data[0])
 nums = [str(i) for i in range(0, 10)]

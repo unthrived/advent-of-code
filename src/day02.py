@@ -1,9 +1,6 @@
 #from itertools import permutations as perm
-
-path = 'input/day02.txt'
-
-with open(path, 'r') as f:
-    data = f.readlines()
+from utils import read_input
+data = read_input(day=2)
 
 for i in range(len(data)):
     data[i] = data[i].split(': ')[1] # remove Game 1: '
@@ -12,8 +9,6 @@ def solve(part = 1):
     amount = 0 #part1
     total_prod = 0 #part2
     for i in range(len(data)): # GAME
-        print()
-        print(i)
         count = 1
         RBG_max = [0, 0, 0]
         cubes = data[i].split('; ')
@@ -48,19 +43,12 @@ def solve(part = 1):
                     break
 
             # part two 
-            print(RBG_final)
             for z in range(3):
                 if RBG_final[z] > RBG_max[z]: 
                     RBG_max[z] = RBG_final[z]
-                
-
-        print(RBG_max, 'max')
         prod = 1
         for z in range(3):
             prod = prod * RBG_max[z]
-        print(prod, 'total')
-
-        #print(RBG_fewest)
 
         if count: 
             id = i+1
@@ -70,8 +58,8 @@ def solve(part = 1):
     if part == 1: return amount
     return total_prod
 
-print(solve())
-print(solve(part=2))
+print('Part one: ', solve())
+print('Part two: ', solve(part=2))
 
         # if -1 not in RBG:
         #     # print(RBG_sorted)
