@@ -24,7 +24,7 @@ for i in range(n):
     for j in range(i+1, i+points+1):
         amount_cards[j] += amount_cards[i]
 
-print(total_points)
+print('Part one: ', total_points)
 for i in range(n):
     total_cards += amount_cards[i]
-print(total_cards)
+print('Part two: ', total_cards)

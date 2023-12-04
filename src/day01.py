@@ -18,7 +18,7 @@ def part_one(data):
         a = int(a)
         b = int(b)
         add = 10*a+b
-        print(i+1, add)
+        # print(i+1, add)
         ans = ans + add
     return ans
 
@@ -73,6 +73,7 @@ def part_two(data):
     return data
 
 #print(data)
+print('Part one:',part_one(data))
 data = part_two(data)
 result = part_one(data)
-print(result)
+print('Part two:',result)
