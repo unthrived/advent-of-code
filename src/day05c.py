@@ -34,13 +34,22 @@ while k < len(initial_seeds):
     seed = initial_seeds[k]
     rang = initial_seeds[k+1]
     for j in range(len(blanks)-1): # iterate from seed-soil-fert-water etc 
-        # print('j', j)
+        print('j', j)
         # print(initial_seeds, 'j', j)
         for i in range(blanks[j]+2, blanks[j+1]): # we need to iterate for each seed-soil etc
             # print(data[i][0], data[i][1], data[i][2])
             print('i', i)
             substraction = initial_seeds[k] - data[i][1]
+            left = data[i][1] - initial_seeds[k]
             # print('subs', substraction)
+
+            if initial_seeds[k] < data[i][1] < initial_seeds[k]+initial_seeds[k+1]:
+                initial_seeds[k+1] = initial_seeds[k+1] - data[i][1] + initial_seeds[k]
+                initial_seeds.append(seed)
+                rang -= data[i][1] - initial_seeds[k]
+                initial_seeds.append(rang)
+                initial_seeds[k] = data[i][1]
+                
             if 0 <= substraction < data[i][2]:
                 # if j==6:
                 # print(i, k, data[i][0], data[i][1], data[i][2])
