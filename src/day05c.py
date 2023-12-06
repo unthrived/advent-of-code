@@ -15,14 +15,6 @@ sum = 0
 for k in range(1, len(initial_seeds), 2):
     sum = sum + initial_seeds[k]
 print('sum', sum)
-# seed = []
-# soil = []
-# fert = []
-# water = []
-# light = []
-# temp = []
-# humid = []
-# loc = []
 
 for i in range(n):
     if data[i]=='': blanks.append(i)
@@ -38,13 +30,9 @@ for i in range(1,n):
                     highest = data[i][j]
 
 k = 0
-n = [0]*10
-
-
 while k < len(initial_seeds):
     seed = initial_seeds[k]
     rang = initial_seeds[k+1]
-    
     for j in range(len(blanks)-1): # iterate from seed-soil-fert-water etc 
         # print('j', j)
         # print(initial_seeds, 'j', j)
@@ -58,41 +46,30 @@ while k < len(initial_seeds):
                 # print(i, k, data[i][0], data[i][1], data[i][2])
                 overext = substraction + initial_seeds[k+1]
                 if overext > data[i][2]:
-                    print('hi')
-                    
+                    #print('hi')
                     initial_seeds[k+1] = data[i][2] - substraction
                     initial_seeds[k] = data[i][0] + substraction
-                    
-                    
-                    # seed = seed + initial_seeds[k+1]
-                    
-                    print('alert', initial_seeds[k+1])
+                    if k == 30: print('alert', initial_seeds[k+1])
                     initial_seeds.append(seed+initial_seeds[k+1])
                     initial_seeds.append(rang-initial_seeds[k+1])
                     rang = initial_seeds[k+1]
                     break
-                    
                 else:
                     initial_seeds[k] = data[i][0] + substraction
                     break
         print(initial_seeds, 'j', j)
-    print()
-    # print(initial_seeds)
     k = k + 2
-        # print(initial_seeds)
-    # print('len', len(initial_seeds))
-    #print('next', initial_seeds)
-
 lowest = highest
 
-
-
 for i in range(0, len(initial_seeds), 2):
-    print(initial_seeds[i], initial_seeds[i+1])
+    print(i, initial_seeds[i], initial_seeds[i+1])
     pass
 
 for k in range(0, len(initial_seeds), 2):
-    if initial_seeds[k] < lowest: lowest = initial_seeds[k]
+    if initial_seeds[k] < lowest: 
+        lowest = initial_seeds[k]
+        print(lowest)
+
 print(len(initial_seeds))
 print(lowest)
 
@@ -104,6 +81,7 @@ print('sum', sum)
 # 21526469 ?????? last
 # 22635950 too low
 # 222541566
+# 25430293
 # 97802093
 # 4294798436 too high
 # 502964497
