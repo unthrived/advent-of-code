@@ -38,18 +38,23 @@ for i in range(1,n):
 for k in range(
     #0, 2
     len(initial_seeds)
+    # 0, len(initial_seeds), 2
     ):
-    for j in range(len(blanks)-1):
-        for i in range(blanks[j]+3, blanks[j+1]):
+    for j in range(len(blanks)-1): # iterate from seed-soil-fert-water etc 
+        for i in range(blanks[j]+2, blanks[j+1]): # for all the rows we need to iterate for each seed-soil etc
             # print(data[i-3])
             substraction = initial_seeds[k] - data[i][1]
             if 0 < substraction < data[i][2]: 
+                print(i, k, data[i][0], data[i][1], data[i][2])
                 next[k] = data[i][0] + substraction
-                print(initial_seeds[k], data[i], next[k])
+                # print(initial_seeds[k], data[i], next[k])
         initial_seeds[k] = next[k]
+        print(initial_seeds)
 
 lowest = highest
 for k in range(len(initial_seeds)):
     if initial_seeds[k] < lowest: lowest = initial_seeds[k]
 
-print(lowest)
+print(initial_seeds)
+
+print(lowest) # 379811651 

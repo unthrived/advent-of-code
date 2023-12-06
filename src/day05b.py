@@ -1,6 +1,4 @@
 from utils import read_input
-import numpy as np
-import scipy as sp
 data = read_input(day=5)
 
 n = len(data)
@@ -11,7 +9,6 @@ initial_seeds = data[0].split(': ')[1].split(' ')
 # initial_seeds = int(initial_seeds)
 for i in range(len(initial_seeds)):
     initial_seeds[i] = int(initial_seeds[i])
-next = [0]*len(initial_seeds)
 print(initial_seeds)
 
 # seed = []
@@ -23,7 +20,6 @@ print(initial_seeds)
 # humid = []
 # loc = []
 
-print(nums)
 for i in range(n):
     if data[i]=='': blanks.append(i)
 blanks.append(n)
@@ -37,22 +33,50 @@ for i in range(1,n):
                 if data[i][j] > highest:
                     highest = data[i][j]
 
-for k in range(
-    len(initial_seeds)
-    ):
-    for j in range(len(blanks)-1):
-        for i in range(blanks[j]+3, blanks[j+1]):
-            # print(data[i-3])
+k = 0
+for j in range(len(blanks)-1): # iterate from seed-soil-fert-water etc 
+    print('j', j)
+    
+    for i in range(blanks[j]+2, blanks[j+1]): # we need to iterate for each seed-soil etc
+        # print(data[i][0], data[i][1], data[i][2])
+        # print('i', i)
+        k = 0
+        while k < len(initial_seeds):
             substraction = initial_seeds[k] - data[i][1]
-            if 0 < substraction < data[i][2]: 
-                next[k] = data[i][0] + substraction
-                print(initial_seeds[k], data[i], next[k])
-        initial_seeds[k] = next[k]
+            # print('subs', substraction)
+            if 0 < substraction < data[i][2]:
+                print(i, substraction, data[i][2], initial_seeds[k], data[i][1])
+                overext = substraction + initial_seeds[k+1]
+                if overext > data[i][2]:
+                    
+                    oldk1 = initial_seeds[k+1]
+                    initial_seeds[k+1] = data[i][2] - substraction
+                    initial_seeds.append(data[i][1]+data[i][2]) # append value
+                    initial_seeds.append(initial_seeds[k+1]+substraction-data[i][2]) # append range
+                    initial_seeds[k] = data[i][0] + substraction
+                else:
+                    initial_seeds[k] = data[i][0] + substraction
+
+            k = k + 2
+            # print(initial_seeds)
+    # print('len', len(initial_seeds))
+    #print('next', initial_seeds)
 
 lowest = highest
-for k in range(len(initial_seeds)):
-    if initial_seeds[k] < lowest: lowest = initial_seeds[k]
 
-seedss = np.zeros(highest)
+print(initial_seeds)
+
+for i in range(0, len(initial_seeds), 2):
+    # print(initial_seeds[i], initial_seeds[i+1])
+    pass
+
+for k in range(0, len(initial_seeds), 2):
+    if 0 < initial_seeds[k] < lowest: lowest = initial_seeds[k]
 
 print(lowest)
+
+
+# 22635950 too low
+# 222541566
+# 97802093
+# 4294798436 too high

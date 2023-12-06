@@ -1,3 +1,2 @@
-a = 'abc'
-a=a.replace('2', '3')
-print(a)
+print(222541566+218404460)
+print(21//2)
