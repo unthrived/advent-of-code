@@ -24,7 +24,6 @@ for j in range(m):
         odd = 1
     half = time // 2
     for k in range(half+1):
-        
         dist = k * time
         time = time - 1
         if dist > data[1][j]: 
