@@ -1,11 +1,10 @@
 from utils import read_input
 data = read_input(day=7)
 
-test = '3<456'
 def poker(string):
     count = [0]*15
     for i in range(len(string)):
-        j = ord(string[i])-48
+        j = ord(string[i])-48 # ASCII '0' -> 0
         count[j] += 1
     jokers = count[1]
     count.pop(1)
@@ -60,6 +59,7 @@ for i in range(n):
     data[i].append(poker(data[i][0]))
 
 data.sort()
+
 order = 1
 for k in range(7):
     for i in range(n):
@@ -78,12 +78,7 @@ for k in range(7):
             order = order+1
 
 total = 0
-
-print(data[0][5])
-
 for i in range(n):
     total += int(data[i][1]) * data[i][6]
-
-for i in range(n): print(data[i])
 
 print(total) #248781813

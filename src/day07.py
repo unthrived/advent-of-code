@@ -1,11 +1,10 @@
 from utils import read_input
 data = read_input(day=7)
 
-test = '3<456'
 def poker(string):
     count = [0]*15
     for i in range(len(string)):
-        j = ord(string[i])-48
+        j = ord(string[i])-48 # ASCII '0' -> 0
         count[j] += 1
     if 5 in count:
         return 6
@@ -26,7 +25,7 @@ def poker(string):
 n = len(data)
 for i in range(n): 
     data[i] = data[i].split(' ')
-    data[i][0] = data[i][0].replace('T', ':')
+    data[i][0] = data[i][0].replace('T', ':') # ASCII 58!
     data[i][0] = data[i][0].replace('J', ';')
     data[i][0] = data[i][0].replace('Q', '<')
     data[i][0] = data[i][0].replace('K', '=')
