@@ -2,26 +2,11 @@ from utils import read_input
 from math import lcm
 data = read_input(day=8)
 
-def to_numeral(string):
-    numeral = 0
-    n = len(string)
-    for j in range(n):
-        numeral += 26**(n-j-1)*ord(string[j])
-    return numeral
-
 n = len(data)
 for i in range(2, n):
     data[i] = data[i].split(' = (')
     data[i][1] = data[i][1].split(')')[0]
     data[i][1] = data[i][1].split(', ')
-
-# print(ord('A'), ord('Z'))
-
-for i in range(2, n):
-    numeral = to_numeral(data[i][0])
-    data[i].append(numeral)
-    data[i].append(to_numeral(data[i][1][0]))
-    data[i].append(to_numeral(data[i][1][1]))
 
 current_map = []
 
@@ -49,14 +34,13 @@ def isz (current_map):
     if z == len(current_map): return True
     else: return False
 
-
-steps = 0
-br = True
-
 result_map = []
 
 for z in range(len(current_map)):
+    steps = 0
+    br = True
     iter_map = [current_map[z]]
+    print(iter_map)
     while br:
         for j in range(len(data[0])):
             next_map = []
@@ -69,12 +53,11 @@ for z in range(len(current_map)):
             steps = steps + 1
             if isz(iter_map): br = False
     result_map.append(steps)
-
+print(result_map)
 # 18113 59 307
 # 20569 67 307
 # 21797 71 307
 # 13201 43 307
 # 24253 79 307
 # 22411 73 307
-
 print(lcm(18113, 20569, 21797, 13201, 24253, 22411))
