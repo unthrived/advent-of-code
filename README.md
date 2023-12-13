@@ -13,7 +13,7 @@
 | [Day 6](https://github.com/unthrived/advent-of-code-2023/blob/main/src/day06.py) | :star: :star: |
 | [Day 7](https://github.com/unthrived/advent-of-code-2023/blob/main/src/day07.py) | :star: :star: |
 | [Day 8](https://github.com/unthrived/advent-of-code-2023/blob/main/src/day08.py) | :star: :star: |
-| [Day 9](https://github.com/unthrived/advent-of-code-2023/blob/main/src/day09.py) | :soon: :soon: |
+| [Day 9](https://github.com/unthrived/advent-of-code-2023/blob/main/src/day09.py) | :star: :star: |
 | [Day 10](https://github.com/unthrived/advent-of-code-2023/blob/main/src/day10.py) | :soon: :soon: |
 | [Day 11](https://github.com/unthrived/advent-of-code-2023/blob/main/src/day11.py) | :soon: :soon: |
 | [Day 12](https://github.com/unthrived/advent-of-code-2023/blob/main/src/day12.py) | :soon: :soon: |
