@@ -5,3 +5,4 @@ cookie.txt
 .DS_Store
 .gitattributes
 /src/__pycache__
+.vscode
