@@ -1,2 +1,9 @@
-from math import lcm
-print(lcm(lcm(18113, 20568), 21797, 13201, 24253, 22411))
+from random import randint
+
+print(randint(0,4))
+
+3, 8, 4, 4
+0, 1, 3, 3
+
+38440
+24801
